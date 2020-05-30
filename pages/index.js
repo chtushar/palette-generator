@@ -1,10 +1,13 @@
 import Head from "next/head";
 import Photos from "../components/Photos";
 import { v4 as uuid } from "uuid";
+import Header from "../components/Header";
+import * as Vibrant from "node-vibrant";
 
 export default function Home({ links }) {
   return (
     <div className="container">
+      <Header />
       <Photos links={links} />
 
       <style global jsx>{`
@@ -16,6 +19,7 @@ export default function Home({ links }) {
         }
         .container {
           max-width: 900px;
+          margin: 0 auto;
         }
       `}</style>
     </div>
@@ -25,9 +29,10 @@ export default function Home({ links }) {
 export async function getStaticProps() {
   let links = [];
   for (let i = 0; i < 10; i++) {
-    let ran = Math.round(200 * Math.random() + i);
+    let link = `https://picsum.photos/400/225?random=${i}`;
+
     links.push({
-      link: `https://i.picsum.photos/id/${ran}/400/225.jpg`,
+      link,
       id: uuid(),
     });
   }

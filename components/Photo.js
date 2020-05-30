@@ -1,8 +1,10 @@
+import Palette from "./Palette";
+
 const Photo = ({ item }) => {
   return (
     <div className="photo">
       <img src={item.link}></img>
-
+      <Palette />
       <style jsx>{`
         .photo {
           width: 400px;
