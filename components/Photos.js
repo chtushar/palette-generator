@@ -1,9 +1,22 @@
 import { useEffect, useState } from "react";
+import Photo from "./Photo";
 
 const Photos = ({ links }) => {
   return (
-    <div>
-      {links.map((el) => <img src={el.link} key={el.id}></img> || undefined)}
+    <div className="photos">
+      {links.map((el) => (
+        <Photo item={el} key={el.id} />
+      ))}
+
+      <style jsx>{`
+        .photos {
+          margin: 0 auto;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      `}</style>
     </div>
   );
 };

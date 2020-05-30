@@ -5,9 +5,19 @@ import { v4 as uuid } from "uuid";
 export default function Home({ links }) {
   return (
     <div className="container">
-      <div className="row">
-        <Photos links={links} />
-      </div>
+      <Photos links={links} />
+
+      <style global jsx>{`
+        body {
+          min-height: 100vh;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        .container {
+          max-width: 900px;
+        }
+      `}</style>
     </div>
   );
 }
