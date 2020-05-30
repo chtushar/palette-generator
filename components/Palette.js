@@ -1,4 +1,23 @@
-const Palette = () => {
+import * as Vibrant from "node-vibrant";
+import { useEffect, useState } from "react";
+
+const Palette = ({ item }) => {
+  let palette = [];
+  useEffect(() => {
+    let v = new Vibrant(item.link);
+    v.getPalette()
+      .then((data) => {
+        return Object.values(data);
+      })
+      .then((arr) => {
+        arr.forEach((el) => {
+          palette.push(el.getHex());
+        });
+
+        console.log(palette);
+      });
+  });
+
   return (
     <div className="palette">
       <style jsx>

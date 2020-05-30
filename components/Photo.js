@@ -4,7 +4,7 @@ const Photo = ({ item }) => {
   return (
     <div className="photo">
       <img src={item.link}></img>
-      <Palette />
+      <Palette item={item} />
       <style jsx>{`
         .photo {
           width: 400px;
