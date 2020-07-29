@@ -1,20 +1,27 @@
 {
-  "name": "random-palette",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
+  "name": "palette-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
-    "next": "9.4.4",
-    "node-fetch": "^2.6.0",
-    "node-sass": "^4.14.1",
-    "node-vibrant": "^3.1.5",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "uuid": "^8.1.0"
-  }
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-vibrant": "^3.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chtushar/palette-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chtushar/palette-generator/issues"
+  },
+  "homepage": "https://github.com/chtushar/palette-generator#readme"
 }
