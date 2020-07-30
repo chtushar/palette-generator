@@ -1,12 +1,25 @@
+const path = require('path');
+const fs = require('fs');
 const express = require('express');
 const router = new express.Router();
 const multer = require('multer');
-const upload = multer({
-  dest: 'uploads/',
+const sharp = require('sharp');
+
+const storage = multer.diskStorage({
+  destination: path.resolve(__dirname, '.', 'uploads'),
+  filename: function (req, file, cb) {
+    cb(null, `IMG.jpg`);
+  },
 });
 
-router.post('/upload', upload.single('samp'), (req, res) => {
-  res.send();
+const upload = multer({
+  storage,
+});
+
+router.post('/upload', upload.single('file'), async (req, res) => {
+  res.json({
+    message: 'File Uploaded!',
+  });
 });
 
 module.exports = router;
