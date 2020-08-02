@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
+import { v4 as uuid } from 'uuid';
 
 export default function FileUpload() {
   let [file, setFile] = useState({});
@@ -8,10 +9,11 @@ export default function FileUpload() {
 
   const onChange = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    const name = e.target.files[0].name;
+    formData.append('file', e.target.files[0], `${uuid() + '-' + name}`);
     setFile(e.target.files[0]);
     setfileName(e.target.files[0].name);
-    const formData = new FormData();
-    formData.append('file', e.target.files[0]);
     try {
       const res = await axios.post(
         'http://localhost:8000/image/upload',

@@ -12,19 +12,16 @@ router.post('/upload', async (req, res) => {
   }
 
   const file = req.files.file;
-  file.mv(
-    `${__dirname}/../../client/public/uploads/${uuid()}-${file.name}`,
-    (err) => {
-      if (err) {
-        console.error(err);
-        return res.status(500).send(err);
-      }
-      res.json({
-        fileName: file.name,
-        filePath: `/uploads/${file.name}`,
-      });
-    },
-  );
+  file.mv(`${__dirname}/../../client/public/uploads/${file.name}`, (err) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send(err);
+    }
+    res.json({
+      fileName: file.name,
+      filePath: `/uploads/${file.name}`,
+    });
+  });
 });
 
 module.exports = router;
