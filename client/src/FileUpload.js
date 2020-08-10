@@ -38,7 +38,7 @@ export default function FileUpload() {
       )}
       <form>
         <div class="upload-btn-wrapper">
-          <button class="btn">Upload a file</button>
+          <button class="btn">Add an Image</button>
           <input type="file" onChange={onChange} />
         </div>
       </form>

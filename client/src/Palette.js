@@ -1,9 +1,9 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
+import Color from './color';
 
-export default function Palette() {
-  return(
-    <div className="palette">
-
-    </div>
-  );
+export default function Palette({ palette }) {
+  const colors = palette.map((c, i) => {
+    return <Color hex={c} key={i} />;
+  });
+  return <div className="palette">{colors}</div>;
 }
