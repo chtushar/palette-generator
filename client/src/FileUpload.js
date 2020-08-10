@@ -15,7 +15,7 @@ export default function FileUpload({ setPalette }) {
     setFile(e.target.files[0]);
     try {
       const res = await axios.post(
-        'http://localhost:8000/image/upload',
+        `${window.location.origin}/image/upload`,
         formData,
       );
 
