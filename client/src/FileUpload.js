@@ -29,18 +29,19 @@ export default function FileUpload() {
 
   return (
     <Fragment>
-      <form>
-        <div>
-          <input type="file" id="file" onChange={onChange} />
-        </div>
-      </form>
       {uploadedFile ? (
-        <div>
+        <div className="image-container">
           <img src={uploadedFile.filePath} />
         </div>
       ) : (
         <div></div>
       )}
+      <form>
+        <div class="upload-btn-wrapper">
+          <button class="btn">Upload a file</button>
+          <input type="file" onChange={onChange} />
+        </div>
+      </form>
     </Fragment>
   );
 }
