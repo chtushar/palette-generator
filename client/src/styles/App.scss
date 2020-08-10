@@ -64,6 +64,7 @@ body {
   position: relative;
   overflow: hidden;
   display: inline-block;
+  cursor: pointer;
 }
 
 .btn {
@@ -73,6 +74,7 @@ body {
   font-size: 1rem;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .upload-btn-wrapper input[type='file'] {
@@ -81,6 +83,7 @@ body {
   left: 0;
   top: 0;
   opacity: 0;
+  cursor: pointer;
 }
 
 .hex {
@@ -90,12 +93,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   .chip {
     font-size: 0.6rem;
     background-color: rgba(0, 0, 0, 0.3);
     padding: 1px;
     border-radius: 2px;
     color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
   }
 }

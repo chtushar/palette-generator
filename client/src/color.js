@@ -3,7 +3,7 @@ import React from 'react';
 const Color = ({ hex }) => {
   return (
     <div className="hex" style={{ backgroundColor: hex }}>
-      <div className="chip">{hex}</div>
+      <button className="chip">{hex}</button>
     </div>
   );
 };

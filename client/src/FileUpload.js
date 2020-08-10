@@ -28,7 +28,7 @@ export default function FileUpload({ setPalette }) {
 
   useEffect(() => {
     Vibrant.from(uploadedFile.filePath)
-      .getPalette()
+      .getSwatches()
       .then(function (palette) {
         let arr = [];
         for (let p in palette) {
