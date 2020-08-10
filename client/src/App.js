@@ -10,12 +10,13 @@ function App() {
     '#d0d0d0',
     '#e0e0e0',
     '#f0f0f0',
+    '#ffffff',
   ]);
 
   return (
     <div className="App">
       <div className="title">palette generator</div>
-      <FileUpload />
+      <FileUpload setPalette={setPalette} />
       <Palette palette={palette} />
     </div>
   );

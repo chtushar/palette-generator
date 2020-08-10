@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Color from './color';
 
 export default function Palette({ palette }) {
